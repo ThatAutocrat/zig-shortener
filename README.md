@@ -36,7 +36,7 @@ git push -u origin main
 2. Click **New → Web Service**
 3. Connect your GitHub repo
 4. Set these settings:
-   - **Environment:** `Docker`
+   - **Environment:** `Docker` (since render dosen't support zig as of this project creation)
    - **Instance Type:** Free
 
 ### 3. Set Environment Variables in Render
@@ -67,7 +67,6 @@ HTMX polls /stats every 3s → updates link count + redirect count live
 | Frontend | HTMX 1.9 via CDN |
 | Styling | Pure CSS (glassmorphism) |
 | Storage | In-memory (resets on restart) |
-| Deploy | Docker → Render |
+| Deploy | Docker → Render or fly.io or railway |
 
-> **Note on free tier:** Render's free tier spins down after 15 mins of inactivity.
-> The first request after sleep takes ~30s to wake up. Totally fine for personal use.
+
