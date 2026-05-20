@@ -21,7 +21,7 @@ FROM debian:bookworm-slim
 
 WORKDIR /app
 COPY --from=builder /app/zig-out/bin/zig-url-shortener ./server
-COPY --from=builder /app/static ./static
+
 
 # Render sets PORT automatically; default to 8080
 ENV PORT=8080
