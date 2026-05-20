@@ -138,7 +138,7 @@ fn handleConnection(conn: net.Server.Connection, host_buf: []const u8) !void {
 
     // GET / → serve index
     if (method == .GET and std.mem.eql(u8, target, "/")) {
-        try req.respond(index.html, .{
+        try req.respond(index_html, .{
             .extra_headers = &.{
                 .{ .name = "Content-Type", .value = "text/html; charset=utf-8" },
             },
