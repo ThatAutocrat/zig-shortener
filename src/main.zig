@@ -161,7 +161,7 @@ fn handleConnection(conn: net.Server.Connection, host_buf: []const u8) !void {
     // POST /shorten → create short link
     if (method == .POST and std.mem.eql(u8, target, "/shorten")) {
         var body_buf: [4096]u8 = undefined;
-        const body = try req.reader().readAll(&body_buf);
+        const body = try (try req.reader()).readAll(&body_buf);
 
         var raw_url_buf: [2048]u8 = undefined;
         var decoded_buf: [2048]u8 = undefined;
