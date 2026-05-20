@@ -40,7 +40,8 @@ fn findByCode(code: []const u8) ?*Entry {
 
 // ── HTML templates ───────────────────────────────────────────────────────────
 
-const INDEX_HTML = @embedFile("../static/index.html");
+const index_html = @embedFile("static/index.html");
+
 
 fn statsHtml(buf: []u8) ![]u8 {
     entries_mutex.lock();
